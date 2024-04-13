@@ -2,11 +2,10 @@
 
 
 import HeroSection from "@/components/HeroSection";
-import MovieGenre from "@/components/MovieGenre";
 import MovieGenreList from "@/components/MovieGenreList";
 import Navbar from "@/components/Navbar";
 import DarkModeContext from "@/context/DarkModeContext";
-import { useState,useContext } from "react";
+import { useContext } from "react";
 
 const Home = () => {
   //const [darkMode,setDarkMode]=useState(false);

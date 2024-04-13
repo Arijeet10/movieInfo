@@ -49,6 +49,7 @@ const Navbar = () => {
                   </div>
                   <div className="border-t w-full" />
                   <Link href="/" className=" p-2">Home</Link>
+                  <div className="border-t w-full" />
                   <div className=" p-2">Login</div>
                 </div>
               </>

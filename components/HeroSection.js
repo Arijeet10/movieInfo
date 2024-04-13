@@ -52,7 +52,12 @@ const HeroSection = () => {
         <img 
             src={`https://image.tmdb.org/t/p/original${popularMovie?.backdrop_path}`}
             alt="movie banner"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="sm:block hidden absolute inset-0 h-full w-full object-cover"
+        />
+        <img 
+            src={`https://image.tmdb.org/t/p/original${popularMovie?.poster_path}`}
+            alt="movie banner"
+            className="sm:hidden absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
         <div className="text-4xl font-bold z-50">{popularMovie?.title}</div>
