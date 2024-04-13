@@ -1,15 +1,18 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
+import WatchTrailer from "@/components/WatchTrailer";
 import DarkModeContext from "@/context/DarkModeContext";
 import { getAPIData } from "@/libs/request";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 
+
 const MovieDetails = ({ params }) => {
   const router = useRouter();
   const { darkMode } = useContext(DarkModeContext);
   const [movie, setMovie] = useState();
+  const [trailer,setTrailer]=useState(false);
   //console.log(params)
   const { movieID } = params;
   //console.log(movieID)
@@ -55,14 +58,21 @@ const MovieDetails = ({ params }) => {
               Release Status:{" "}
               <span
                 className={`font-semibold ${
-                  movie?.status == "Released" && "text-green-700 dark:text-green-500"
+                  movie?.status == "Released" &&
+                  "text-green-700 dark:text-green-500"
                 } text-slate-400`}
               >
                 {movie?.status}
               </span>
             </div>
+            <button 
+            onClick={()=>setTrailer(true)}
+            className="border px-6 py-2 rounded-sm font-medium dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white">
+              Watch Trailer
+            </button>
           </div>
         </div>
+        {trailer && <WatchTrailer movieID={movieID} setTrailer={setTrailer} />}
       </div>
     </>
   );

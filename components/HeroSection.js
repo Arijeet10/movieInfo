@@ -5,6 +5,7 @@ import { FaInfo } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { getAPIData } from "@/libs/request";
 import { useRouter } from "next/navigation";
+import WatchTrailer from "./WatchTrailer";
 
 const HeroSection = () => {
 
@@ -12,7 +13,7 @@ const HeroSection = () => {
 
   const [movieData, setMovieData] = useState();
   const [popularMovie, setPopularMovie] = useState();
-
+  const [trailer,setTrailer]=useState(false);
 
 
 //get popular movies detail from api
@@ -63,7 +64,7 @@ const HeroSection = () => {
         <div className="text-4xl font-bold z-50">{popularMovie?.title}</div>
         <div className="font-medium z-50 shadow-2xl">{popularMovie?.overview}</div>
         <div className="flex items-center gap-4 z-50 font-medium">
-          <button className="p-2 flex items-center gap-1 border rounded-md bg-white text-black dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white">
+          <button onClick={()=>setTrailer(true)} className="p-2 flex items-center gap-1 border rounded-md bg-white text-black dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white">
             <>
               <IoPlay />
             </>
@@ -76,6 +77,7 @@ const HeroSection = () => {
             More Info
           </button>
         </div>
+        {trailer && <WatchTrailer movieID={popularMovie?.id} setTrailer={setTrailer} />}
       </div>
     </>
   );
