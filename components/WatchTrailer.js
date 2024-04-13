@@ -32,7 +32,7 @@ const WatchTrailer = ({movieID,setTrailer}) => {
     return ( 
         <>
             <div className="darken-background z-50" />
-            <div className="absolute w-[600px] h-[400px] top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] rounded-md z-50 shadow-lg">
+            <div className="absolute w-full h-2/4 sm:w-[600px] sm:h-[400px] top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] rounded-md z-50 shadow-lg">
                 <div className="relative w-full h-full">
                 <MdClose
                     onClick={()=>setTrailer(false)}

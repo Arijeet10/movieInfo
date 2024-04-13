@@ -37,7 +37,7 @@ const MovieDetails = ({ params }) => {
     <>
       <div className={`${darkMode && "dark"}`}>
         <Navbar />
-        <div className="p-2 dark:bg-black dark:text-white">
+        <div className="p-2 h-full dark:bg-black dark:text-white">
           <div className="py-2 flex justify-end ">
             <button
               onClick={() => router.push("/")}
