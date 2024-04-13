@@ -1,5 +1,7 @@
 import DarkModeContextProvider from "@/context/DarkModeContextProvider";
 import "./globals.css";
+import SearchContextProvider from "@/context/SearchContextProvider";
+import Navbar from "@/components/Navbar";
 
 
 export const metadata = {
@@ -10,9 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="w-full h-full">
       <DarkModeContextProvider>
+      <SearchContextProvider>
+      <Navbar />
       {children}
+      </SearchContextProvider>
       </DarkModeContextProvider>
       </body>
     </html>

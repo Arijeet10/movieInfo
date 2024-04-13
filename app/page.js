@@ -14,8 +14,7 @@ const Home = () => {
 
   return ( 
     <>
-      <div className={`${darkMode && 'dark'}  `}>
-      <Navbar />
+      <div className={`${darkMode && 'dark'} h-full w-full `}>
         <div>
           <HeroSection />
         </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
 import WatchTrailer from "@/components/WatchTrailer";
 import DarkModeContext from "@/context/DarkModeContext";
 import { getAPIData } from "@/libs/request";
@@ -35,8 +34,7 @@ const MovieDetails = ({ params }) => {
 
   return (
     <>
-      <div className={`${darkMode && "dark"}`}>
-        <Navbar />
+      <div className={`${darkMode && "dark"} h-full`}>
         <div className="p-2 h-full dark:bg-black dark:text-white">
           <div className="py-2 flex justify-end ">
             <button
