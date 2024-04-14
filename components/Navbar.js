@@ -18,10 +18,13 @@ const Navbar = () => {
   const {darkMode,setDarkMode}=useContext(DarkModeContext);
   const {search,setSearch}=useContext(SearchContext);
 
+  //while user is typing movies name
   const handleSearch=(e)=>{
       setSearch(e.target.value)
       router.push("/searchresults")
   }
+
+
 
   return (
     <div className={`${darkMode && "dark"}`}>
@@ -35,7 +38,7 @@ const Navbar = () => {
               value={search}
               onChange={(e)=>handleSearch(e)}
             />
-            <CiSearch className="dark:text-black hover:cursor-pointer" />
+            <CiSearch  className="dark:text-black hover:cursor-pointer" />
           </div>
             {/* Mobile View */}
           <div className="sm:hidden">
@@ -62,7 +65,7 @@ const Navbar = () => {
                   <div className="border-t w-full" />
                   <Link href="/" className=" p-2">Home</Link>
                   <div className="border-t w-full" />
-                  <div className=" p-2">Login</div>
+                  <div onClick={()=>router.push("/login")} className=" p-2 cursor-pointer">Login</div>
                 </div>
               </>
             ) : (
@@ -84,7 +87,7 @@ const Navbar = () => {
             )}
           </>
           <Link href="/" className="sm:block hidden">Home</Link>
-          <div className="sm:block hidden">Login</div>
+          <div onClick={()=>router.push("/login")} className="sm:block hidden cursor-pointer">Login</div>
         </div>
       </div>
     </div>
