@@ -29,9 +29,9 @@ const Navbar = () => {
   return (
     <div className={`${darkMode && "dark"}`}>
       <div className={`p-2  flex justify-between sm:grid sm:grid-cols-12 items-center shadow-md dark:bg-black dark:text-white`}>
-        <div className="sm:col-span-7 font-bold">MovieInfo</div>
-        <div className="sm:col-span-5 flex items-center justify-between sm:gap-2 gap-4 font-medium">
-          <div className="w-20 sm:w-auto flex items-center justify-between border border-black dark:border-slate-50 dark:bg-white dark:text-black rounded-sm p-2">
+        <div className="sm:col-span-5 font-bold uppercase text-2xl">MovieInfo</div>
+        <div className="sm:col-span-7 flex items-center justify-end sm:gap-6 gap-4 font-medium">
+          <div className="w-20 sm:w-auto flex items-center justify-between border rounded-md shadow-sm dark:border-slate-50 dark:bg-white dark:text-black p-2">
             <input
               placeholder="search movies"
               className="  focus:outline-none font-normal w-full "
@@ -45,27 +45,25 @@ const Navbar = () => {
             {slider ? (
               <>
                 <MdClose onClick={() => setSlider(false)} />
-                <div className="absolute top-[58px] right-0 w-20  flex flex-col border dark:border-black bg-white z-50 shadow-sm dark:bg-black dark:text-white  ">
-                  <div className="p-2 flex items-center gap-1">
+                <div onClick={()=>setSlider(!slider)} className="p-2 absolute top-[60px] right-2 w-40  flex flex-col rounded-md dark:border-black bg-white z-50 shadow-sm dark:bg-black dark:text-white  ">
+                  <div className="px-2 py-1 flex items-center gap-1 rounded-md hover:bg-red-600 hover:text-white cursor-pointer">
                     <>
                       {darkMode ? (
                         <CiLight
                           onClick={() => setDarkMode(false)}
-                          className="sm:hidden"
+                          className="sm:hidden w-5 h-5"
                         />
                       ) : (
                         <CiDark
                           onClick={() => setDarkMode(true)}
-                          className="sm:hidden"
+                          className="sm:hidden w-5 h-5"
                         />
                       )}
                     </>
-                    <>{darkMode ? "Dark" : "Light"}</>
+                    <>{darkMode ? "Light" : "Dark"}</>
                   </div>
-                  <div className="border-t w-full" />
-                  <Link href="/" className=" p-2">Home</Link>
-                  <div className="border-t w-full" />
-                  <div onClick={()=>router.push("/login")} className=" p-2 cursor-pointer">Login</div>
+                  <Link href="/" className=" px-2 py-1 rounded-md hover:bg-red-600 hover:text-white ">Home</Link>
+                  <div onClick={()=>router.push("/login")} className=" px-2 py-1 rounded-md hover:bg-red-600 hover:text-white cursor-pointer ">Signin</div>
                 </div>
               </>
             ) : (
@@ -87,7 +85,7 @@ const Navbar = () => {
             )}
           </>
           <Link href="/" className="sm:block hidden">Home</Link>
-          <div onClick={()=>router.push("/login")} className="sm:block hidden cursor-pointer">Login</div>
+          <div onClick={()=>router.push("/login")} className="sm:block hidden cursor-pointer rounded-md text-white bg-red-600 px-4 py-1 text-nowrap">Sign in</div>
         </div>
       </div>
     </div>
