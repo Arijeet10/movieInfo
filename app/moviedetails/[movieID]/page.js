@@ -41,7 +41,7 @@ const MovieDetails = ({ params }) => {
   return (
     <>
       <div className={`${darkMode && "dark"} h-full`}>
-        <div className="p-2 h-full dark:bg-black dark:text-white">
+        <div className="p-2 pt-16 h-full dark:bg-black dark:text-white">
           {loading && <div className="">Loading Movie Details...</div>}
           {error ? (
             <div className="">
@@ -52,7 +52,7 @@ const MovieDetails = ({ params }) => {
               <div className="py-2 flex justify-end ">
                 <button
                   onClick={() => router.push("/")}
-                  className="border px-6 py-2 rounded-sm font-medium dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white"
+                  className="border px-6 py-2 rounded-md font-medium dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white"
                 >
                   Back
                 </button>

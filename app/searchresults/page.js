@@ -32,7 +32,8 @@ const SearchResults = () => {
     return ( 
         <>
 
-            <div className={`${darkMode && "dark"} `}>
+            <div className={`${darkMode && "dark"} h-full `}>
+            <div className="dark:bg-black pt-16">
                 {searchResults?.length==0 && <div className="h-screen text-2xl font-semibold dark:text-white dark:bg-black">No Search Results Found</div>}
                 <div className="p-4 grid justify-center items-center gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 dark:bg-black dark:text-white">
                     {searchResults && searchResults.map((item,i)=>{
@@ -40,6 +41,7 @@ const SearchResults = () => {
                             <MovieCard key={i} movie={item} />
                         </>
                     })}
+                </div>
                 </div>
             </div>
         </>
