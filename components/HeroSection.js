@@ -71,11 +71,11 @@ const HeroSection = () => {
               className="sm:hidden absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
-            <div className="text-4xl font-bold z-50">{popularMovie?.title}</div>
-            <div className="font-medium z-50 shadow-2xl">
+            <div className="text-4xl font-bold z-10">{popularMovie?.title}</div>
+            <div className="font-medium z-10 shadow-2xl">
               {popularMovie?.overview}
             </div>
-            <div className="flex items-center gap-4 z-50 font-medium">
+            <div className="flex items-center gap-4 z-10 font-medium">
               <button
                 onClick={() => setTrailer(true)}
                 className="p-2 flex items-center gap-1 border rounded-md bg-white text-black dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white"
