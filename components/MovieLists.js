@@ -4,14 +4,22 @@ import { getAPIData } from "@/libs/request";
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 
-const MovieLists = ({ genreID }) => {
+
+const MovieLists = ({ genreID,page }) => {
   const [movieLists, setMovieLists] = useState();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  // const [page,setPage]=useState(1);
+
+  // const loadMovies=()=>{
+  //   setPage(page+1);
+
+  // }
+
 
   useEffect(() => {
     if (genreID) {
-      const subURL = `/discover/movie?with_genres=${genreID}`;
+      const subURL = `/discover/movie?with_genres=${genreID}&page=${page}`;
       (async function apiCall() {
         try {
           setLoading(true);
@@ -29,8 +37,7 @@ const MovieLists = ({ genreID }) => {
           setLoading(false);
         }
       })();
-    }
-  }, [genreID]);
+    }  }, [genreID,page]);
 
   return (
     <>

@@ -18,7 +18,7 @@ const HeroSection = () => {
 
   //get popular movies detail from api
   useEffect(() => {
-    const subURL = "/movie/popular";
+    const subURL = "/trending/movie/week";
     (async function apiCall() {
       try {
         setLoading(true);

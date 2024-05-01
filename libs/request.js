@@ -7,6 +7,7 @@ const options = {
     },
   };
 
+
 export const getAPIData=async(req)=>{
     try {
         const res=await fetch(process.env.NEXT_PUBLIC_API_URL+req,options);

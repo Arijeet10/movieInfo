@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+*{
+    @apply transition-colors duration-100;
+}
+
 .hide-scrollbar::-webkit-scrollbar{
     display: none;
 }
