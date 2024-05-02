@@ -35,8 +35,8 @@ const Navbar = () => {
         </div>
         <div className="sm:col-span-7 flex items-center justify-end sm:gap-6 gap-4 font-medium">
           <div
-            className={`p-2 w-[137px] sm:w-auto flex items-center justify-between shadow-sm  ${
-              showSearch && "rounded-md  bg-white dark:bg-white dark:text-black"
+            className={`p-2 w-[137px] sm:w-auto flex items-center justify-between   ${
+              showSearch && "rounded-md shadow-sm bg-white dark:bg-white dark:text-black"
             }  transition ease-in-out delay-150`}
           >
             <div className={`${showSearch ? "block" : "hidden"}`}>
